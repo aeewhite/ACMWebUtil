@@ -1,0 +1,19 @@
+{
+  "name": "acmwebutil",
+  "description": "This small API powers all of the ACM automated magic",
+  "repository": "https://github.com/UA-ACM-Student-Chapter/ACMWebUtil",
+  "image": "heroku/java",
+  "addons": [ "mongolab:sandbox" ],
+  "env" : {
+    "FROM_EMAIL" : {
+      "description" : "The from email address"
+    },
+    "FROM_ALIAS" : {
+      "description": "The email alias to display this string"
+    },
+    "SMTP_PASSWORD" : {
+      "description" : "SMTP Password to use for email services",
+      "generator" : "secret"
+    }
+  }
+}
