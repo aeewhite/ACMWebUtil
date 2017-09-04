@@ -12,8 +12,7 @@
       "description": "The email alias to display this string"
     },
     "SMTP_PASSWORD" : {
-      "description" : "SMTP Password to use for email services",
-      "generator" : "secret"
+      "description" : "SMTP Password to use for email services"
     }
   }
 }
