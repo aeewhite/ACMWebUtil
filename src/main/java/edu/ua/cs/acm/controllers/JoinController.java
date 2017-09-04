@@ -30,7 +30,8 @@ public class JoinController {
     public ResponseEntity joinAcm(@RequestBody JoinMessage message) {
 
         try {
-            emailService.sendMessage(new JoinEmailMessage(message.getFirstName(), message.getLastName(), message.getEmail()));
+            emailService.sendMessage(new JoinEmailMessage(message.getFirstName(), message.getLastName(),
+                    message.getEmail(), message.wantsSlackToJoinSlack()));
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

@@ -41,7 +41,7 @@ public class JoinMessage {
         this.slack = slack;
     }
 
-    private boolean wantsSlackToJoinSlack() {
-        return slack.toLowerCase().equals("Yes");
+    public boolean wantsSlackToJoinSlack() {
+        return slack.toLowerCase().equals("yes");
     }
 }

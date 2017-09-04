@@ -11,8 +11,8 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @Configuration
 public class BeanConfig {
 
-    @Bean
-    public JavaMailSender mailSender() {
-        return new JavaMailSenderImpl();
-    }
+//    @Bean
+//    public JavaMailSender mailSender() {
+//        return new JavaMailSenderImpl();
+//    }
 }

@@ -21,8 +21,8 @@ public class SmtpEmailServiceImpl implements EmailService {
 
 
     @Autowired
-    public SmtpEmailServiceImpl(JavaMailSender mailSender, @Value("email.from-address") String fromAddress,
-                                @Value("email.from-alias") String fromAlias) {
+    public SmtpEmailServiceImpl(JavaMailSender mailSender, @Value("${email.from-address}") String fromAddress,
+                                @Value("${email.from-alias}") String fromAlias) {
         this.mailSender = mailSender;
         this.fromAddress = fromAddress;
         this.fromAlias = fromAlias;

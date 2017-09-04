@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+    .bold {
+        font-weight: bold;
+    }
+</style>
+<body>
+<p>Hi, ${firstName}!</p>
+<p>
+    Thank you for your interest in ACM. We're really excited to have you as a part of our organization!
+</p>
+<p>
+    Below you'll find some valuable links to get connected to our organization.
+</p>
+<ul>
+    <li>
+        <a href="http://acm.cs.ua.edu">The ACM Website</a>
+    </li>
+    #if( $includeSlack )
+        <li>
+            <a href="https://unofficialuacs.slack.com/signup?email=${email}">The (Unofficial CS) Slack</a>
+        </li>
+    #end
+    <li>
+        <a href="mailto:listserv@bama.ua.edu?body=subscribe%20ua-acm%20${firstName}%20${lastName}">Our Email Group</a>
+    </li>
+</ul>
+<p>If you have any other questions, feel free to <a href="mailto:acm-off@listserv.ua.edu">reach out to us!</a></p>
+<p>The UA ACM Exec Board</p>
+</body>
+</html>

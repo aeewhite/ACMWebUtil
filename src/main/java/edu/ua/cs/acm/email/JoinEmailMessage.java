@@ -11,13 +11,15 @@ public class JoinEmailMessage extends DirectEmailMessage {
 
     private final String firstName;
     private final String lastName;
+    private final boolean includeSlackRegistration;
     private static final String TEMPLATE_NAME = "join.html";
 
-    public JoinEmailMessage(String firstName, String lastName, String email) {
+    public JoinEmailMessage(String firstName, String lastName, String email, boolean includeSlackRegistration) {
         super(email, "[UA ACM] Welcome to ACM!", 5);
         setHtml(true);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.includeSlackRegistration = includeSlackRegistration;
     }
 
     @Override
@@ -26,6 +28,8 @@ public class JoinEmailMessage extends DirectEmailMessage {
 
         model.put("firstName", getFirstName());
         model.put("lastName", getLastName());
+        model.put("email", getToEmails()[0].split("@")[0]);
+        model.put("includeSlack", includeSlackRegistration);
 
         return renderTemplate("join.html", model);
     }
