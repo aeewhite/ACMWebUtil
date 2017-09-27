@@ -15,7 +15,7 @@ public class SubscribeEmailMessage extends DirectEmailMessage {
     private static final String TEMPLATE_NAME = "subscribe.html";
 
     public SubscribeEmailMessage(String firstName, String lastName, String email) {
-        super(email, "subscribe", 5);
+        super("listserv@bama.ua.edu", "subscribe", 5);
         setHtml(true);
         this.firstName = firstName;
         this.lastName = lastName;
