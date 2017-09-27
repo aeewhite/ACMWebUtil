@@ -1,7 +1,9 @@
 package edu.ua.cs.acm.controllers;
 
 import edu.ua.cs.acm.email.JoinEmailMessage;
+import edu.ua.cs.acm.email.SubscribeEmailMessage;
 import edu.ua.cs.acm.messages.JoinMessage;
+import edu.ua.cs.acm.messages.SubscribeMessage;
 import edu.ua.cs.acm.services.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,8 @@ public class JoinController {
         try {
             emailService.sendMessage(new JoinEmailMessage(message.getFirstName(), message.getLastName(),
                     message.getEmail(), message.wantsSlackToJoinSlack()));
+            emailService.sendMessage(new SubscribeEmailMessage(message.getFirstName(), message.getLastName(),
+                    message.getEmail()));
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
